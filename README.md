@@ -4,7 +4,7 @@ This project contains the submission for the <b>"Coursera Getting and Cleaning D
 
 <b>Note:</b> to allow this script to function, the "AbsolutePathNameToDirectory" variable needs to be set to the same directors as "run_analysis.R" is found. This variable can be found at line 20 of the code.
 
-The Data.table package is required. 
+The data.table package is required. 
 
 <b>The driver script 'run_analysis.R' executes the following steps:</b>
 <ol>
