@@ -17,7 +17,7 @@
 
 ##===================================================================================##
 # NOTE: This path needs to be set to the working directory of this project
-AbsolutePathNameToDirectory <- "F:/Development/R/GettingAndCleaningData/CourseProject";
+AbsolutePathNameToDirectory <- "F:/Development/R/GettingAndCleaningData/Getting-and-Cleaning-Data-Course-Project";
 ##===================================================================================##
 
 # Set the working directory
@@ -28,23 +28,18 @@ rm(list=ls())
 
 ##imports
 library( data.table );
-library( stringr );
-library( plyr )
-
 
 
 ##===================================================================================##
 # Part 0: Load the data into memory
 
-if ( file.exists("./data")) {
-    print("Found local skipping download")
-} else {
+if ( !file.exists("UCI HAR Dataset")) {
     print("Downloading dataset")
-    temp <- tempfile()
     download.file( url = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", 
-                  destfile = temp
-            )
-    #unz( temp, )
+                   destfile = "temp.zip"
+    )
+    unzip( "temp.zip" )
+    file.remove("temp.zip")
 }
 
 # Helper function to read all subfiles within a directors into memory named by the 
